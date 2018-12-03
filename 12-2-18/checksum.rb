@@ -6,7 +6,6 @@ def checksum(file)
   threes = 0
 
   words.each do |word|
-    debugger
     res = twos_and_threes(word)
 
     twos += 1  if res['two']
@@ -42,10 +41,11 @@ def find_correct_boxes(file)
 
       if res
         word = words[i]
-        debugger
         str = ''
+
         str += word[0...res]
         str += word[i+1..-1] unless word[i+1..-1].nil?
+        
         return str
       end
 

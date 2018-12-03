@@ -1,17 +1,17 @@
 require 'byebug'
-#
-# def frequency_calculator(file)
-#   frequencies = File.readlines(file).map(&:chomp)
-#   frequencies.reduce(0) do |sum, delta|
-#     direction = delta[0]
-#     magnitude = delta[1..-1].to_i
-#     if direction == "+"
-#       sum + magnitude
-#     else
-#       sum - magnitude
-#     end
-#   end
-# end
+
+def frequency_calculator(file)
+  frequencies = File.readlines(file).map(&:chomp)
+  frequencies.reduce(0) do |sum, delta|
+    direction = delta[0]
+    magnitude = delta[1..-1].to_i
+    if direction == "+"
+      sum + magnitude
+    else
+      sum - magnitude
+    end
+  end
+end
 
 def first_frequency_reached_twice(file)
   frequency_deltas = File.readlines(file).map(&:chomp)
@@ -35,9 +35,8 @@ def first_frequency_reached_twice(file)
       end
     end
   end
-
-  return current_frequency
 end
+
 if __FILE__ == $PROGRAM_NAME
   puts first_frequency_reached_twice("input.txt")
 end
